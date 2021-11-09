@@ -26,7 +26,7 @@ yum install wget unzip -y
 2 创建一个目录放配置以及chromium
 
 ```
-mkdir nolanjdc && cd nolanjdc
+mkdir nvjdc && cd nvjdc
 ```
 
 3 下载config.json 配置文件 并且修改自己的配置 不能缺少
@@ -60,7 +60,7 @@ rm  -f chrome-linux.zip
 7 回到最初创建的目录
 
 ```
-cd  ~/nolanjdc
+cd .. && cd .. && cd ..
 ```
 
 8 拉镜像
@@ -68,24 +68,25 @@ cd  ~/nolanjdc
  持续更新
 
 ```
-sudo docker pull nolanhzy/nvjdc:latest
+docker pull nolanhzy/nvjdc:latest
 ```
-or 备份版 0.8
+or 备份版
 
 ```
-sudo docker pull yanyuwangluo/nvjdc:0.8
+docker pull aaronyyds/nvjdc:(0.8+)
 ```
 
 9 启动镜像
 
 ```
-sudo docker run -d 
--p 5701:80 
---name nolanjdc 
---privileged=true 
--v /volume1/docker/nolanjdc/Config.json:/app/Config/Config.json:ro 
--v /volume1/docker/nolanjdc/.local-chromium:/app/.local-chromium  
-nolanhzy/nvjdc:latest
+docker run -dit \
+  -p 5701:80 \
+  --name nvjdc \
+  --privileged=true \
+  -v $PWD/nvjdc/Config.json:/app/Config/Config.json:ro \
+  -v $PWD/nvjdc/.local-chromium:/app/.local-chromium \
+  --hostname nvjdc \
+  nolanhzy/nvjdc:latest
 ```
 
 10 查看 日志
@@ -112,10 +113,10 @@ docker rmi -f nolanhzy/nvjdc:latest
 ```
 
 进入你以前下载过 Config.json 配置的文件夹中
-如原来在 root 下 nolanjdc 文件夹中
+如原来在 root 下 nvjdc 文件夹中
 
 ```
-cd /root/nolanjdc 
+cd /root/nvjdc 
 ```
 
 然后重复后续步骤即可
@@ -132,8 +133,8 @@ Config.json 是配置文件 可以热更新 修改后不用重启容器
 原作 Nolanhzy
 https://hub.docker.com/r/nolanhzy/nvjdc
 
-备份 aaronyyds
-https://hub.docker.com/r/yanyuwangluo/nvjdc
+备份 aaronyyds (0.8+)
+https://hub.docker.com/r/aaronyyds/nvjdc
 
 
 
