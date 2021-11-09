@@ -39,7 +39,7 @@ wget -O Config.json   https://ghproxy.com/https://raw.githubusercontent.com/King
 ```
 配置文件大家根据自己的更改。
 
-4 创建子文件夹.local-chromium，再新建子文件夹Linux-884014 （注意都是文件夹下层）
+4 创建子文件夹 .local-chromium，再新建子文件夹Linux-884014 （注意都是文件夹下层）
 
 ```
 mkdir -p  .local-chromium/Linux-884014 && cd .local-chromium/Linux-884014
@@ -92,7 +92,7 @@ docker run -dit \
 10 查看 日志
 
 ```
-docker logs -f nolanjdc 
+docker logs -f nvjdc 
 
 ```
 
@@ -103,7 +103,7 @@ docker logs -f nolanjdc
 删除容器
 
 ```
-docker rm -f nolanjdc 
+docker rm -f nvjdc 
 ```
 
 删除镜像
