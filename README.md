@@ -108,11 +108,11 @@ docker rm -f nolanjdc
 删除镜像
 
 ```
-docker rmi -f nolanhzy/nvjdc:0.4
+docker rmi -f nolanhzy/nvjdc:latest
 ```
 
-进入你以前下载过 浏览器 和JSON配置的文件夹中
-如原来在 root 下 nolanjdc 文件夹中 下载的配置与浏览器
+进入你以前下载过 Config.json 配置的文件夹中
+如原来在 root 下 nolanjdc 文件夹中
 
 ```
 cd /root/nolanjdc 
@@ -127,6 +127,7 @@ cd /root/nolanjdc
 Config.json 是配置文件 可以热更新 修改后不用重启容器
 
 ## 最后
+
 鸣谢：
 原作 Nolanhzy
 https://hub.docker.com/r/nolanhzy/nvjdc
