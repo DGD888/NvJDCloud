@@ -65,7 +65,7 @@ cd  ~/nolanjdc
 
 8 拉镜像
 
-持续更新
+ 持续更新
 
 ```
 sudo docker pull nolanhzy/nvjdc:latest
@@ -73,7 +73,7 @@ sudo docker pull nolanhzy/nvjdc:latest
 or 备份版 0.8
 
 ```
-sudo docker pull aaronyyds/nvjdc:0.8
+sudo docker pull yanyuwangluo/nvjdc:0.8
 ```
 
 9 启动镜像
@@ -133,7 +133,7 @@ Config.json 是配置文件 可以热更新 修改后不用重启容器
 https://hub.docker.com/r/nolanhzy/nvjdc
 
 备份 aaronyyds
-https://hub.docker.com/r/aaronyyds/nvjdc
+https://hub.docker.com/r/yanyuwangluo/nvjdc
 
 
 
