@@ -16,17 +16,18 @@ Net core5  vue3 puppeteer sharp的一次尝试
 查看地址:https://github.com/dotnet/core/blob/main/release-notes/5.0/5.0-supported-os.md
 
 ## 安装教程
+#新版好像可以略过1-7步骤，直接从8开始，拉镜像映射到本地，然后 cd 到目录 nvjdc/config/ 下载步骤 3 的 Config.json修改完毕，访问 http://ip:5701 
 
 1 执行命令
 
 ```
-yum install wget unzip -y
+sudo yum install wget unzip -y
 ```
 
 2 创建一个目录放配置以及chromium
 
 ```
-mkdir nvjdc && cd nvjdc
+mkdir nvjdc/config && cd nvjdc/config
 ```
 
 3 下载config.json 配置文件 并且修改自己的配置 不能缺少
@@ -68,24 +69,25 @@ cd .. && cd .. && cd ..
  持续更新
 
 ```
-docker pull nolanhzy/nvjdc:latest
+sudo docker pull nolanhzy/nvjdc:latest
 ```
 or 备份版
 
 ```
-docker pull aaronyyds/nvjdc:(0.8+)
+sudo docker pull aaronyyds/nvjdc:(0.8+)
 ```
 
 9 启动镜像
 
 ```
-docker run -dit \
-  -p 5701:80 \
-  --name nvjdc \
-  --privileged=true \
-  -v $PWD/nvjdc/Config.json:/app/Config/Config.json:ro \
+sudo docker run -dit \
+  -v $PWD/nvjdc/config:/app/Config \
   -v $PWD/nvjdc/.local-chromium:/app/.local-chromium \
+  -p 5701:80 \
+  --privileged=true \
+  --name nvjdc \
   --hostname nvjdc \
+  --restart unless-stopped \
   nolanhzy/nvjdc:latest
 ```
 
