@@ -17,6 +17,7 @@ Net core5  vue3 puppeteer sharp的一次尝试
 
 ## 安装教程
 #新版好像可以略过1-7步骤，直接从8开始，拉镜像映射到本地，然后 cd 到目录 nvjdc/config/ 下载步骤 3 的 Config.json修改完毕，访问 http://ip:5701 
+#0.8+已实测
 
 1 执行命令
 
